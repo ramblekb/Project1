@@ -38,6 +38,16 @@ $(document).ready(function () {
     })
 }
 )
+
+  $(function () {
+    $('li').css('cursor', 'pointer')
+
+        .click(function () {
+            window.location = $('a', this).attr('href');
+            return false;
+        });
+});
+
   // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyD_4k2OJ7rzvz31qJ9fsiUWQtab8eqFJ8U",
@@ -50,17 +60,8 @@ $(document).ready(function () {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-$(function () {
-    $('li').css('cursor', 'pointer')
 
-        .click(function () {
-            window.location = $('a', this).attr('href');
-            return false;
-        });
-});
-
-$("#form_group").reset();
-
+  var data
 
 
 
