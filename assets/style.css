@@ -1,0 +1,12 @@
+body {
+    background: url(../assets/images/Nashville\ skyline.jpg) center center no-repeat fixed #464646;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    color: black;
+
+}
+
