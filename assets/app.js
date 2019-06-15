@@ -27,6 +27,8 @@ $(document).ready(function () {
         return false;
 
     }
+ 
+
 
 
     function removeTask() {
@@ -41,6 +43,14 @@ $(document).ready(function () {
     })
 }
 )
+$(function() {
+    $('li').css('cursor', 'pointer')
+
+    .click(function() {
+        window.location = $('a', this).attr('href');
+        return false;
+    });
+});
 
 
 
