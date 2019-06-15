@@ -42,7 +42,6 @@ $(document).ready(function () {
 
     }
 
-
     function removeTask() {
 
         alert("Button Clicked!");
@@ -55,8 +54,16 @@ $(document).ready(function () {
     })
 }
 )
+$(function () {
+    $('li').css('cursor', 'pointer')
 
+        .click(function () {
+            window.location = $('a', this).attr('href');
+            return false;
+        });
+});
 
+$("#form_group").reset();
 
 
 
