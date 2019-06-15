@@ -27,9 +27,6 @@ $(document).ready(function () {
         return false;
 
     }
- 
-
-
 
     function removeTask() {
 
@@ -43,16 +40,16 @@ $(document).ready(function () {
     })
 }
 )
-$(function() {
+$(function () {
     $('li').css('cursor', 'pointer')
 
-    .click(function() {
-        window.location = $('a', this).attr('href');
-        return false;
-    });
+        .click(function () {
+            window.location = $('a', this).attr('href');
+            return false;
+        });
 });
 
-
+$("#form_group").reset();
 
 
 
