@@ -1,7 +1,34 @@
+$(document).ready(function () {
+
+    $(".first-anim").animate({ "left": "+=150px" }, "slow");
+    $(".second-anim").animate({ "left": "+=100px" }, "slow");
+    $(".third-anim").animate({ "left": "+=50px" }, "slow");
+
+    var firebaseConfig = {
+        apiKey: "AIzaSyD_4k2OJ7rzvz31qJ9fsiUWQtab8eqFJ8U",
+        authDomain: "regular-project-ffb1f.firebaseapp.com",
+        databaseURL: "https://regular-project-ffb1f.firebaseio.com",
+        projectId: "regular-project-ffb1f",
+        storageBucket: "regular-project-ffb1f.appspot.com",
+        messagingSenderId: "241952960961",
+        appId: "1:241952960961:web:bf48ab13524a7e2a"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
     
-$(function () {
-  // Variable that stores the favorite artist:
-  var favoritelist = [];
+      var database = firebase.database()
+
+    // Variable that stores the favorite artist:
+    var favoritelist = [];
+
+    //This is saving artist list on Firebase
+    database.ref().on("child_added", function(snapshot){
+        var savedArtist = snapshot.val();
+        console.log(savedArtist.name);
+        $("#userSearch").text(savedArtist.name);
+    })
+
+    var favoritelist = [];
 
 
   // Function called when the form is submitted.
@@ -15,9 +42,13 @@ $(function () {
       if (task.value) {
           favoritelist.push(task.value);
           message = "";
-          for (var i = 0, count = favoritelist.length; i < count; i++) {
+          for (var i = 0;i < favoritelist.length; i++) {
               message += '<li>' + favoritelist[i] + '</li>';
           }
+
+          database.ref().push({
+            name: task.value
+          });
 
           output.innerHTML = message;
       } // End of task.value IF.
@@ -95,4 +126,12 @@ $(function () {
         });
     }
 
-});
+    
+})
+
+
+
+
+
+
+
