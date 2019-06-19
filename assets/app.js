@@ -40,8 +40,7 @@ $(function () {
       addfavartist();
   })
 
-
-
+ 
     function attachAjaxCall () {
 
         $('li').css('cursor', 'pointer')
@@ -51,28 +50,47 @@ $(function () {
                 var artistInput = this.innerText ;
                 // debugger;
                 console.log(artistInput);
-                
+                //Youtube info for api 
                   var queryURL = "https://www.googleapis.com/youtube/v3/search?&part=snippet&q=" + artistInput +
                      "&key=AIzaSyDkXdU2LudYi2Gin1FZMypNn1MCbSzcS-M";
-        
+                     var queryURL2 = "https://api.songkick.com/api/3.0/search/artists.json?apikey=wuCD2ljEi5nAfdAE&query=" +artistInput
+                     
         
             
                     $.ajax({
                         url: queryURL,
-                        method: "GET"
-        
+                        method: "GET",
                     }).then(function (response) {
                     console.log(response);
                     var searchResults = response.items[2].id.videoId;
-                    
+                
+                    //Youtube player attribute adding the search results to Youtube 
                     $('#player').attr("src","https://www.youtube.com/embed/"+searchResults);
                     
-                    
-                    
-                    
-        
+                    });
+
+                    $.ajax({
+                        url: queryURL2,
+                        method: "GET",
+                    }).then(function (response) {
+                    console.log(response);
+                    console.log(response.resultsPage.results.artist[0].id);
+                    var artistId = response.resultsPage.results.artist[0].id;
+                    var eventsUrl = "https://api.songkick.com/api/3.0/artists/"+artistId+ "/calendar.json?apikey=wuCD2ljEi5nAfdAE"
+                   
+                    $.ajax({
+                        url: eventsUrl,
+                        method: "GET",
+                    }).then(function (response) {
+                    console.log(response);
+                    console.log(responsePage.results.event[0].displayName);
+                   
                     
                     });
+                
+                    
+                    });
+                
                 
         });
     }
