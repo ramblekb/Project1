@@ -9,6 +9,7 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
@@ -24,99 +25,84 @@
 <body>
 
     <div class="container">
-        <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-4">Musician's Plug</h1>
-                <p class="lead">Find out which of your favorite bands is coming to town!</p>
-                </p>
-            </div>
-        </div>
+        <nav class="navbar navbar-light bg-light">
+            <span class="navbar-brand mb-0 h1">Musician's Plug</span>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Add Artist" id="nameInput"
+                    aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="task">Submit</button>
+            </form>
+        </nav>
+        <br>
+        <br>
+        <br>
 
-
-
-
-        <div class="col-md-12">
-            <div class="card mb-4">
-                <div class="card-header">Add Artist</div>
-                <div class="card-body">
-
-                    <form>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Name</label>
-                            <input type="text" class="form-control" id="nameInput" aria-describedby="emailHelp"
-                                placeholder="Name">
-                            <button class="btn btn-primary float-right" id="task">Submit</button>
-                        </div>
-                    </form>
-
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card mb-4">
-                                <div class="card-header">Add Artist</div>
-                                <div class="card-body">
-
-                                    <form>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Name</label>
-                                            <input type="text" class="form-control" id="nameInput"
-                                                aria-describedby="emailHelp" placeholder="Name">
-                                            <button class="btn btn-primary float-right" id="task">Submit</button>
-
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-
+        <div class="row">
 
             <div class="col-md-4">
-
                 <!-- Where the list of artists should go -->
                 <div class="card mb-4">
                     <div class="card-header">On the list</div>
                     <div class="card-body">
-                        <ul>
-                            <li class="table table-sm table-hover" id="userSearch">
-                                Artists Name
-                            </li>
+                        <ul class="table table-sm table-hover" id="userSearch">
+                            <li>Artists Name</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
+
+            
             <div class="col-md-4">
 
                 <!-- Where the list of artists should go -->
                 <div class="card mb-4">
                     <div class="card-header">Past Live Performances</div>
                     <div class="card-body">
-                        <ul>
-                            <li class="table table-sm table-hover" id="userSearch">
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+                        <iframe id="player" width="300" height="300" src="https://www.youtube.com/embed/"
+                            frameborder="0"
+                            allow="all";
+                            allowfullscreen></iframe>
 
-            <div class="col-md-4">
-
-                <!-- Where the list of artists should go -->
-                <div class="card mb-4">
-                    <div class="card-header">Are They Coming to Town?</div>
-                    <div class="card-body">
-                        <ul>
-                            <li class="table table-sm table-hover" id="userSearch">
-                            </li>
-                        </ul>
                     </div>
                 </div>
 
+                
+
+                        
+                  
+                    
+
+                
+
+
+
+
+
+
+                    <div class="col-md-4">
+
+                        <!-- Where the list of artists should go -->
+            <div class="card mb-4">
+                            <div class="card-header">Are They Coming to Town?</div>
+                            <div class="card-body">
+                                <script charset="utf-8" src="https://widget.bandsintown.com/main.min.js"></script><a
+                    class="bit-widget-initializer" data-artist-name="maroon 5" data-display-local-dates="true"
+                    data-display-past-dates="false" data-auto-style="false" data-text-color="#000000"
+                    data-link-color="#00b4b3" data-background-color="rgba(0,0,0,0)" data-display-limit="2"
+                    data-link-text-color="#FFFFFF" data-display-lineup="false" data-display-play-my-city="true"
+                    data-separator-color="rgba(124,124,124,0.25)"></a>
+                <ul>
+
+                </ul>
             </div>
+        </div>
+
+    </div>
+
+
+
+    </script>
 
 </body>
 
