@@ -11,7 +11,7 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/style.css">
-    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
@@ -40,7 +40,7 @@
 
             <div class="col-md-4" class="card">
                 <!-- Where the list of artists should go -->
-                <div class="card mb-4">
+                <div class="card mb-4 first-anim">
                     <div class="card-header">On the list</div>
                     <div class="card-body">
                         <ul>
@@ -55,20 +55,22 @@
             <div class="col-md-4" class="card">
 
                 <!-- Where the list of artists should go -->
-                <div class="card mb-4">
-                    <div class="card-header">Past Live Performances</div>
-                    <div class="card-body">
-                        <ul>
-
-                        </ul>
+                <div class="card mb-4 second-anim">
+                        <div class="card-header">Past Live Performances</div>
+                        <div class="card-body">
+                            <iframe id="player" width="250" height="250" src="https://www.youtube.com/embed/aj1Q7jDgrc4"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+    
+                        </div>
                     </div>
-                </div>
             </div>
 
             <div class="col-md-4" class="card">
 
                 <!-- Where the list of artists should go -->
-                <div class="card mb-4">
+                <div class="card mb-4 third-anim">
                     <div class="card-header">Are They Coming to Town?</div>
                     <div class="card-body">
                     <script charset="utf-8" src="https://widget.bandsintown.com/main.min.js"></script><a
