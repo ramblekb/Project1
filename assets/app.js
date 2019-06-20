@@ -36,6 +36,7 @@ $(document).ready(function () {
 
     var div = $("<li>").append(artistbtn);
     $("#userSearch").append(div);
+
   })
 
   $(document).on("click", ".artistBtn", function () {
@@ -107,6 +108,7 @@ $(document).ready(function () {
 
     if (task.value) {
       favoritelist.push(task.value);
+      database.ref().push({name:task.value});
       message = "";
       for (var i = 0, count = favoritelist.length; i < count; i++) {
         message += '<li>' + favoritelist[i] + '</li>';
