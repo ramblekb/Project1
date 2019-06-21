@@ -33,10 +33,10 @@ $(document).ready(function () {
     console.log(savedArtist.name);
 
     var artistbtn = $("<button>").addClass("artistBtn btn btn-default").val(savedArtist.name).text(savedArtist.name);
+    if (favoritelist[0] !== savedArtist.name) favoritelist.unshift(savedArtist.name);
 
     var div = $("<li>").append(artistbtn);
-    $("#userSearch").append(div);
-
+    $("#userSearch").prepend(div);
   })
 
   $(document).on("click", ".artistBtn", function () {
@@ -103,32 +103,17 @@ $(document).ready(function () {
   function addfavartist() {
 
     var task = document.getElementById("nameInput");
-    var output = document.getElementById("userSearch");
-    var message = "";
 
     if (task.value) {
-      favoritelist.push(task.value);
+      favoritelist.unshift(task.value);
       database.ref().push({name:task.value});
-      message = "";
-      for (var i = 0, count = favoritelist.length; i < count; i++) {
-        message += '<li>' + favoritelist[i] + '</li>';
-      }
 
-      output.innerHTML = message;
-    } // End of task.value IF.
+    } 
 
-    attachAjaxCall();
-
-    // Return false to prevent submission:
     return false;
 
   }
 
-  function removeTask() {
-
-    alert("Button Clicked!");
-
-  }
 
   $("#task").on("click", function (event) {
     event.preventDefault();

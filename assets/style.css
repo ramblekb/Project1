@@ -15,7 +15,9 @@ body {
     color: white;
 }
 .card-header, .card-footer { 
-    opacity: 1
+    background-color: rgba(0,0,0,0.4);
+    opacity: 1;
+    text-align: center;
 }
 
 .navbar {
