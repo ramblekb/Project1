@@ -124,11 +124,6 @@ $(document).ready(function () {
 
   }
 
-  function removeTask() {
-
-    alert("Button Clicked!");
-
-  }
 
   $("#task").on("click", function (event) {
     event.preventDefault();
