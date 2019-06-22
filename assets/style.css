@@ -24,7 +24,7 @@ body {
     background-color: rgba(245, 245, 245, 0.4); 
     color: white;
 }
-
+/* Movement matches JQuery */
 .first-anim {
     left: -150px;
 }
