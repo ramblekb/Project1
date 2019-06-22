@@ -33,6 +33,7 @@ $(document).ready(function () {
     console.log(savedArtist.name);
 
     var artistbtn = $("<button>").addClass("artistBtn btn btn-default").val(savedArtist.name).text(savedArtist.name);
+    //this if statement deletes the duplicate name created by the child_added function of firebase 
     if (favoritelist[0] !== savedArtist.name) favoritelist.unshift(savedArtist.name);
 
     var div = $("<li>").append(artistbtn);
